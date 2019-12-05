@@ -9,6 +9,11 @@ class TodoListScreen extends StatelessWidget {
       title: Text('Todo List'),
       centerTitle: true,
     ),
+    floatingActionButton: FloatingActionButton(
+      child: Icon(Icons.add),
+      onPressed: () { print('Add'); },
+    ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     body: Container(
       child: SingleChildScrollView(
         child: Column(
