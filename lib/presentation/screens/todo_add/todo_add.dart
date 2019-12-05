@@ -8,6 +8,13 @@ class TodoAddScreen extends StatelessWidget {
       title: Text('Todo Add'),
       centerTitle: true,
     ),
-    body: AddForm(),
+    body: Padding(
+      padding: EdgeInsets.all(15.0),
+      child: AddForm(
+        onAdd: (String value) {
+          print(value);
+        }
+      ),
+    ),
   );
 }
