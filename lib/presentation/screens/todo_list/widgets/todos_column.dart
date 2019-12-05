@@ -10,7 +10,7 @@ class TodosColumn extends StatelessWidget {
     return todoList.map((todo) =>
         TodoCard(
           text: todo.label,
-          color: Colors.white,
+          color: Color(todo.color),
         )
     ).toList();
   }
