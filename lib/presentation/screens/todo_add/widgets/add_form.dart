@@ -31,7 +31,6 @@ class _AddFormData {
   }
 }
 
-// TODO: Fix DropdownButtonFormField not changing
 class _AddForm extends State<AddForm> {
   final _formKey = GlobalKey<FormState>();
   final _AddFormData _data = _AddFormData();
@@ -52,7 +51,7 @@ class _AddForm extends State<AddForm> {
         ),
         ColorDropdown(
           value: _data.color,
-          onChanged: _data.onColorChange,
+          onChanged: (value) => setState(() => this._data.onColorChange(value)),
           decoration: InputDecoration(labelText: 'Label Color'),
         ),
         RaisedButton(
