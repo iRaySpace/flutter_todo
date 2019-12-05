@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/presentation/screens/todo_add/todo_add.dart';
+
 import 'widgets/todo_card.dart';
 
 
@@ -11,7 +13,12 @@ class TodoListScreen extends StatelessWidget {
     ),
     floatingActionButton: FloatingActionButton(
       child: Icon(Icons.add),
-      onPressed: () { print('Add'); },
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => TodoAddScreen()),
+        );
+      },
     ),
     floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     body: Container(
