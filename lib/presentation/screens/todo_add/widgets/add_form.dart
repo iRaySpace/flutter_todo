@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'color_dropdown.dart';
 
 class AddForm extends StatefulWidget {
   AddForm({
@@ -14,6 +15,7 @@ class AddForm extends StatefulWidget {
 
 class _AddFormData {
   String label = '';
+  int color = Colors.white.value;
 
   String validateLabel(String label) {
     return label.isEmpty ? 'Label is required' : null;
@@ -42,6 +44,10 @@ class _AddForm extends State<AddForm> {
           ),
           validator: _data.validateLabel,
           onSaved: _data.saveLabel,
+        ),
+        ColorDropdown(
+          value: _data.color,
+          decoration: InputDecoration(labelText: 'Label Color'),
         ),
         RaisedButton(
           child: Text('Add Todo'),
