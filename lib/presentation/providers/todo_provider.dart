@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/core/models/todo.dart';
 
 class TodoProvider with ChangeNotifier {
-  final List<String> _todoList = [];
+  final List<TodoModel> _todoList = [];
 
-  List<String> get todoList => _todoList;
+  List<TodoModel> get todoList => _todoList;
 
-  void addTodo(String todo) {
+  void addTodo(TodoModel todo) {
     _todoList.add(todo);
     notifyListeners();
   }

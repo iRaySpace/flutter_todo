@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import 'package:flutter_todo/presentation/providers/todo_provider.dart';
+import 'package:flutter_todo/core/models/todo.dart';
 import 'widgets/add_form.dart';
 
 class TodoAddScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class TodoAddScreen extends StatelessWidget {
         padding: EdgeInsets.all(15.0),
         child: AddForm(
             onAdd: (String value) {
-              _provider.addTodo(value);
+              _provider.addTodo(TodoModel(label: value));
               Navigator.pop(context);
             },
         ),
