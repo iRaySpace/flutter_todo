@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_todo/presentation/screens/todo_list/widgets/todos_column.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_todo/presentation/providers/todo_provider.dart';
 import 'package:flutter_todo/presentation/screens/todo_add/todo_add.dart';
+import 'package:flutter_todo/presentation/screens/todo_list/widgets/todos_column.dart';
 
 class TodoListScreen extends StatelessWidget {
   @override
