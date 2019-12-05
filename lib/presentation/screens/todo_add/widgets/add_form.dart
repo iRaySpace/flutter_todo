@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/core/models/todo.dart';
 import 'color_dropdown.dart';
 
 class AddForm extends StatefulWidget {
@@ -7,7 +8,7 @@ class AddForm extends StatefulWidget {
     @required this.onAdd,
   }) : super(key: key);
 
-  final Function(String) onAdd;
+  final Function(TodoModel) onAdd;
 
   @override
   _AddForm createState() => _AddForm();
@@ -25,8 +26,12 @@ class _AddFormData {
     this.label = label;
   }
 
+  void onColorChange(int color) {
+    this.color = color;
+  }
 }
 
+// TODO: Fix DropdownButtonFormField not changing
 class _AddForm extends State<AddForm> {
   final _formKey = GlobalKey<FormState>();
   final _AddFormData _data = _AddFormData();
@@ -47,6 +52,7 @@ class _AddForm extends State<AddForm> {
         ),
         ColorDropdown(
           value: _data.color,
+          onChanged: _data.onColorChange,
           decoration: InputDecoration(labelText: 'Label Color'),
         ),
         RaisedButton(
@@ -54,7 +60,12 @@ class _AddForm extends State<AddForm> {
           onPressed: () {
             if (_formKey.currentState.validate()) {
               _formKey.currentState.save();
-              widget.onAdd(_data.label);
+              widget.onAdd(
+                TodoModel(
+                  label: _data.label,
+                  color: _data.color,
+                )
+              );
             }
           },
         ),

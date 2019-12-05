@@ -19,15 +19,10 @@ class TodoAddScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(15.0),
         child: AddForm(
-            onAdd: (String value) {
-              _provider.addTodo(
-                  TodoModel(
-                    label: value,
-                    color: Colors.green.value,
-                  )
-              );
-              Navigator.pop(context);
-            },
+          onAdd: (TodoModel value) {
+            _provider.addTodo(value);
+            Navigator.pop(context);
+          },
         ),
       ),
     );
