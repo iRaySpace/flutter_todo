@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'widgets/add_form.dart';
 
 class TodoAddScreen extends StatelessWidget {
   @override
@@ -8,8 +8,6 @@ class TodoAddScreen extends StatelessWidget {
       title: Text('Todo Add'),
       centerTitle: true,
     ),
-    body: Container(
-      child: Text('Add new todo')
-    ),
+    body: AddForm(),
   );
 }

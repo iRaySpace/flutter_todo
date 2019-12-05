@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo/presentation/screens/todo_add/todo_add.dart';
-
 import 'widgets/todo_card.dart';
-
 
 class TodoListScreen extends StatelessWidget {
   @override

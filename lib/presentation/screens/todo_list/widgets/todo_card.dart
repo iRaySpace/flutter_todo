@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class TodoCard extends StatelessWidget {
   TodoCard({@required this.color});
 
