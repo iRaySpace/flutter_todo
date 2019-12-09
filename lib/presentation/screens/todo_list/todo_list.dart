@@ -15,6 +15,12 @@ class TodoListScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Todo List'),
           centerTitle: true,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.save),
+              onPressed: () { print("saving"); },
+            )
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
