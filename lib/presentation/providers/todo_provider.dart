@@ -16,4 +16,9 @@ class TodoProvider with ChangeNotifier {
     final todoList = _todoList.map((todo) => todo.toJson());
     return json.encode(todoList.toList());
   }
+
+  void replaceTodos(List<TodoModel> todos) {
+    this._todoList.clear();
+    this._todoList.addAll(todos);
+  }
 }

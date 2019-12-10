@@ -16,4 +16,10 @@ class TodoModel {
     };
   }
 
+  factory TodoModel.fromJson(Map<String, dynamic> parsedJson) {
+    return TodoModel(
+      label: parsedJson['label'],
+      color: parsedJson['color']
+    );
+  }
 }

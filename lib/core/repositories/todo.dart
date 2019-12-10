@@ -1,16 +1,21 @@
-import 'package:meta/meta.dart';
+import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_todo/core/models/todo.dart';
 
 class TodoRepository {
-  final SharedPreferences sharedPreferences;
+  SharedPreferences _sharedPreferences;
 
-  TodoRepository({@required this.sharedPreferences});
-  
-  Future<bool> saveTodos(todos) {
-    return this.sharedPreferences.setString('todos', todos);
+  setSharedPreferences(sharedPreferences) {
+    this._sharedPreferences = sharedPreferences;
   }
 
-  String getTodos() {
-    return this.sharedPreferences.getString('todos');
+  Future<bool> saveTodos(todos) {
+    return this._sharedPreferences.setString('todos', todos);
+  }
+
+  List<TodoModel> getTodos() {
+    final todoJson = this._sharedPreferences.getString('todos');
+    final List<dynamic> todoList = json.decode(todoJson);
+    return todoList.map((todo) => TodoModel.fromJson(todo)).toList();
   }
 }
