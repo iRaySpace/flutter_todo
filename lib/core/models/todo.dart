@@ -8,4 +8,12 @@ class TodoModel {
     @required this.label,
     @required this.color,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'label': this.label,
+      'color': this.color,
+    };
+  }
+
 }
