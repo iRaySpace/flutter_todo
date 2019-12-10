@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_todo/core/models/todo.dart';
 
@@ -11,4 +12,8 @@ class TodoProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  String encodeToJson() {
+    final todoList = _todoList.map((todo) => todo.toJson());
+    return json.encode(todoList.toList());
+  }
 }

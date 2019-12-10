@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'app.dart';
 import 'locator.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  registerLocator();
+  await registerLocator();
   runApp(App());
 }
