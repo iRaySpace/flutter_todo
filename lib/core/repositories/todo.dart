@@ -10,4 +10,7 @@ class TodoRepository {
     return this.sharedPreferences.setString('todos', todos);
   }
 
+  String getTodos() {
+    return this.sharedPreferences.getString('todos');
+  }
 }
